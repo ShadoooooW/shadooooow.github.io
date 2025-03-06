@@ -19,7 +19,7 @@
         }
 
         window.addEventListener("message", (event) => {
-            document.getElementById("parentMessage").innerText = "Message from Child: " + event.data;
+            document.getElementById("parentMessage").innerHTML = "Message from Child: " + event.data;
         });
     </script>
 </body>

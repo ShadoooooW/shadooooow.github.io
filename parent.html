@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Page</title>
+</head>
+<body onload=sendMessage()>
+    <h1>Parent Page</h1>
+    <iframe id="childFrame" src="child.html" width="400" height="200"></iframe>
+    <button onclick="sendMessage()">Send Message to Child</button>
+    <p id="parentMessage"></p>
+
+    <script>
+        const iframe = document.getElementById("childFrame");
+
+        function sendMessage() {
+            iframe.contentWindow.postMessage("Hello from Parent", "*");
+        }
+
+        window.addEventListener("message", (event) => {
+            document.getElementById("parentMessage").innerText = "Message from Child: " + event.data;
+        });
+    </script>
+</body>
+</html>

